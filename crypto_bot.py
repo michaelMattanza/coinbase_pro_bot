@@ -88,9 +88,10 @@ class CryptoBot:
 # MAIN 
 # 
 crypto_bot = CryptoBot()
-
-if crypto_bot.wallet["currency"] == "EUR":
-   crypto_bot.buy()
+serviceHandler = ServiceHandler( )
+wallet = serviceHandler.getWallet( )
+if wallet["currency"] == "EUR":
+   crypto_bot.buy() 
 
 while True:
     crypto_bot.update()
