@@ -50,18 +50,3 @@ class ServiceHandler():
         else:
             print("Request error:", available, side, product_id)
         return r
-
-    def convertCoin(self, fromCoin, toCoin, available):
-        conversion = {
-            "from": fromCoin,
-            "to": fromCoin,
-            "amount": available
-        }
-        r = request.post(self.serviceUrl + "conversions", json=conversion, auth=self.auth)
-        if r.status_code == 200:
-            print("Conversion:", "Amount: " + r["amount"], "From: " + r["from"], "To" + r["to"])
-        else:
-            print("Conversion error:", fromCoin, toCoin, available)
-        return r
-
-
