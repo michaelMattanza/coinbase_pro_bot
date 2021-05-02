@@ -28,7 +28,7 @@ class ServiceHandler():
                     if btc_available > 0:
                         wallet = {"currency":account["currency"], "available":btc_available}
 
-                elif account["currency"] == "USDC" and float( account["available"] ) > 0:
+                elif account["currency"] == "EUR" and float( account["available"] ) > 0:
                     wallet = {"currency": account["currency"], "available": float( account["available"] )}
                     return wallet
 
